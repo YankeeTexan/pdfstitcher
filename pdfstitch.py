@@ -7,8 +7,13 @@ from PyPDF2 import PdfFileWriter, PdfFileMerger
 
 # Define Argparse
 parser = argparse.ArgumentParser(description='Merge PDF files and customize results.')
-parser.add_argument('infiles', nargs='*', type=str)
-parser.add_argument('--csv', type=str, help='CSV file with PDF documents, titles, and page numbers for bookmarks.')
+parser.add_argument('infiles', nargs='*', type=argparse.FileType('r'), action='append')
+parser.add_argument('--csv', type=argparse.FileType('r'),
+                    help='CSV file with PDF documents, titles, and page numbers for bookmarks.')
+parser.add_argument('--yaml', type=argparse.FileType('r'),
+                    help='YAML file with PDF documents, titles, and page numbers for bookmarks.')
+parser.add_argument('-f', '--filedir', type=str, help='Directory containing all PDFs and CSV to include.')
+parser.add_argument('-o', '--outfile', type=argparse.FileType('w'), help='The output file name.')
 
 
 def merge_docs():
@@ -16,8 +21,7 @@ def merge_docs():
 
 
 if __name__ == '__main__':
-    args = parser.parse_args()
-    print(args)
+    merge_docs()
 
 # root_dir = r'C:\Users\Andrew\Dropbox\OLS\Products\_JET Product Rollups\20220422'
 # product_name = 'JET Product Roll Up 22 April 2022'
