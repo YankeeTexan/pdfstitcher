@@ -1,0 +1,31 @@
+{
+  "title": "Test PDF Document",
+  "directory": "data",
+  "documents": [
+    {
+      "title": "Document 1",
+      "path": "document_1.pdf",
+      "description": "Document 1 is an amazing summary of whatever garbage we publish on a weekly basis.",
+      "author": "Analyst Team A",
+      "published": "01 MAY 2022"
+    },
+    {
+      "title": "Document 2",
+      "path": "document_2.pdf",
+      "description": "Document 2 is a more amazing document that has things broken up by subtitles.",
+      "author": "Analyst Team A",
+      "published": "01 MAY 2022",
+      "subtitles": [
+        {
+          "subtitle": "First Subtitle",
+          "page": 2
+        },
+        {
+          "subtitle": "Second Subtitle",
+          "page": 3
+        }
+      ]
+    }
+  ]
+
+}
